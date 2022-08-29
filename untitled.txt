@@ -1,0 +1,55 @@
+
+// Controls
+
+function Skip_Forward() {
+    video.pause();
+    video.currentTime = Pause_Points[Point];
+}
+
+function Skip_Backward() {
+    video.pause();
+    video.currentTime = Pause_Points[Point];
+}
+
+function Play_Forward() {
+    if (video.currentTime >= Pause_Points[Point]-0.05) {
+        video.pause();
+    }
+}
+
+function Loop_Backward() {
+    if (video.currentTime >= Pause_Points[Point]-0.05) {
+        video.currentTime = Pause_Points[Point-1];
+        video.play();
+    }
+}
+
+
+
+// 
+
+document.onkeydown = Check_Key;
+
+function Check_Key(e) {
+    
+    e = e || window.event;
+    console.log(e.keyCode);
+    
+    // f: Fullscreen
+    
+    else if (e.key == 'f') {
+        video.webkitEnterFullscreen();
+        video.enterFullscreen();
+    }
+    
+
+    
+    
+
+
+
+
+    }
+
+}
+
