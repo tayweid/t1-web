@@ -2,6 +2,7 @@
 
 var Video = document.getElementById("The_Video"); 
 var Timekeeper = document.getElementById("Timekeeper");
+var Description = document.getElementById("Description");
 var Point = 0;
 
 
@@ -12,6 +13,11 @@ setInterval(Set_Timekeeper, 100);
 function Set_Timekeeper() {
     Timekeeper.innerHTML = Video.currentTime.toFixed(1);
 }
+
+
+// Description
+
+Description.innerHTML = "This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means."
 
 
 // Time Controls
