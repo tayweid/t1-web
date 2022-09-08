@@ -4,6 +4,7 @@ var Video = document.getElementById("The_Video");
 var Timekeeper = document.getElementById("Timekeeper");
 var Description = document.getElementById("Description");
 var Point = 0;
+var Target = 0;
 
 
 // Timer
@@ -11,13 +12,13 @@ var Point = 0;
 setInterval(Set_Timekeeper, 100);
 
 function Set_Timekeeper() {
-    Timekeeper.innerHTML = Video.currentTime.toFixed(1);
+    Timekeeper.innerHTML = Point;//Video.currentTime.toFixed(1);
 }
 
 
 // Description
 
-Description.innerHTML = "This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means. This is what this part of the video means."
+Description.innerHTML = "This is the description of the point in the video."
 
 
 // Time Controls
@@ -26,32 +27,49 @@ function Point_Forward() {
     if (Point < Pause_Points.length-1) {
         Point = Point + 1;
     }
+    Target = Pause_Points[Point];
 }
 
 function Point_Backward() {
     if (Point > 0) {
         Point = Point - 1;
     }
+    Target = Pause_Points[Point];
 }
 
 function Skip_Forward() {
     Point_Forward();
-    Video.currentTime = Pause_Points[Point];
+    Video.currentTime = Target;
 }
 
 function Skip_Backward() {
     Point_Backward();
-    Video.currentTime = Pause_Points[Point];
+    Video.currentTime = Target;
 }
 
 function Play_To() {
-    if (Video.currentTime < Pause_Points[Point] - 0.1) {
+    if (Video.currentTime < Target - 0.1) {
         setTimeout(Video.currentTime = Video.currentTime + 0.1, 0.1);
     }
-    if (Video.currentTime > Pause_Points[Point]) {
+    if (Video.currentTime > Target) {
         setTimeout(Video.currentTime = Video.currentTime - 0.1, 0.1);
     }
 }
+
+
+// I need to do another thing, updating the point as I move through the video. If I go past the next point, the point automatically updates
+
+// Check whether Target > Pause_Point[Point-1]
+
+function Update_Point() {
+    if (Target > Pause_Point[Point-1]) {
+        Point = Point + 1
+    }
+}
+//setInterval(Update_Point(),100);
+//this doesn't work yet
+
+// The next update will also include a looping function, which will essentially just update the target to the past pause point when it equals or exceeds the current pause point.
 
 
 // Check Keys
@@ -70,18 +88,6 @@ function Check_Key(e) {
     if (e.key == 'f') {
         Video.webkitEnterFullscreen();
         Video.enterFullscreen();
-    }
-    
-    // s: Increment Forward
-    
-    if (e.keyCode == '83') {
-        Video.currentTime = Video.currentTime + 0.1
-    }
-    
-    // a: Increment Backward
-    
-    if (e.keyCode == '65') {
-        Video.currentTime = Video.currentTime - 0.1
     }
     
     // Up Arrow: Skip to Next Pause Point
@@ -106,6 +112,20 @@ function Check_Key(e) {
     
     if (e.keyCode == '37') {
         Point_Backward();
+    }
+    
+    // s: Increment Forward
+    
+    if (e.keyCode == '83') {
+        Target = Target + 0.1
+        //Video.currentTime = Video.currentTime + 0.1
+    }
+    
+    // a: Increment Backward
+    
+    if (e.keyCode == '65') {
+        Target = Target + 0.1
+        //Video.currentTime = Video.currentTime - 0.1
     }
     
 }
