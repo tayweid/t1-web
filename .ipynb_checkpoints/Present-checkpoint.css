@@ -1,87 +1,112 @@
+
 :root {
-    --teaching_color:#247322;
+    --Sidebar_Color: #CDA200;
+    --Description_Color: #181818;
+    --Active_Color: #BEBEBE;
+    --Timer_Color: black;
+    --Button_Color: grey;
 }
-.present_section {
-    height: 100%;
-    font-size:30px;
-    margin-left: 10%; 
-    margin-right: 10%;
-    margin-bottom: 0%;
+body {
+    font-family: "Roboto", sans-serif;
 }
-.heading {
+.Header {
+    margin:-3%;
+    text-align: center; 
+    font-size:56px; 
+}
+.Title {
+    color:var(--Sidebar_Color); 
     text-align: center;
-    text-transform: uppercase;
-    font-size: 40px;
-    margin-bottom: 50px;
 }
-.heading hr {
-    border: 1px solid black;
-    margin: auto; 
-    width:90%;
+
+.OuterContent {
+    padding-left:15%;
+    padding-right:15%;
+    overflow: hidden;
 }
-div.content {
-    color:black;
-    margin-left: 250px;
-    padding: 20px 20px;
-    height: 100%;
-    font-size: 28px;
+.Content {
+    border-radius:20px;
+    border: 1px solid grey;
+    overflow: hidden;
+    background-color:var(--Description_Color); 
 }
-.present_card {
+.Content:hover {
+    box-shadow: 0.5px 1px 2px 0.5px var(--Sidebar_Color);
+    transition: 0.2s;
+}
+.Content > hr {
+    margin-top:0px; 
+}
+.Body_Container {
     display: flex;
-    overflow:hidden;
-    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
-    transition: 0.05s;
-    height: 150px;
-    width:60%;
-    margin: auto;
-    border-radius: 5px;
-    margin-bottom: 50px;
+    overflow: hidden;
 }
-.present_card:hover {
-    box-shadow: 0.5px 1px 2px 0.5px var(--teaching_color);
-    cursor: pointer;
+.Video_Container {
+    width:94%;
 }
-.present_flex {
-    display: flex;
-    height: 100%;
+.The_Video {
     width:100%;
-    margin: auto;
-    border-radius: 5px;
+    border-radius:0px;
 }
-.present_banner_empty {
+.Control_Group {
+    color:black; 
+    background-color:var(--Button_Color); 
+    font-size:24px;
+    width:4%;
+}
+.Control_Group > div {
     text-align:center;
-    font-size:30px;
-    background-color:var(--teaching_color);
+    height:50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.Play_Forward:hover {
+    background-color: var(--Active_Color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.Play_Backward:hover {
+    background-color: var(--Active_Color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.Skip_Forward:hover {
+    background-color: var(--Active_Color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.Skip_Backward:hover {
+    background-color: var(--Active_Color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.Footer_Container {
+    display: flex;
+}
+.Description {
+    width:100%;
+    background-color:var(--Description_Color); 
+    font-size:24px;
+    padding:3%;
     color:white;
-    font-style: italic;
-    width:5px;
-    height:101%;
-    margin:0;
-    writing-mode: tb-rl;
-    transform: rotate(-180deg);
 }
-.present_block {
-    margin: auto;
-    margin-left: 2%;
-    margin-right: 5%;
-    text-align: left;
-    width: 70%;
+.Timekeeper {
+    background-color:var(--Timer_Color); 
+    text-align:center;
+    border-radius:20px;
+    color:white;
 }
-.present_title {
-    color:var(--teaching_color);
-    text-decoration:none;
-    text-transform: uppercase;
-}
-.present_title:hover {
-    font-weight: bold;
-    cursor: pointer;
-}
-.present_image {
-    margin: 0px;
-    border-radius: 5px;
-    height:100%;
-    background-color:white;
-}
-.present_image:hover {
-    cursor: pointer;
+
+
+/* This turns off controls in full screen */
+video::-webkit-media-controls-enclosure { display:none !important; }
+
+video {	
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
 }

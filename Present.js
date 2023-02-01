@@ -1,3 +1,5 @@
+
+
 // Start Video
 
 var Video = document.getElementById("The_Video"); 
@@ -12,13 +14,13 @@ var Target = 0;
 setInterval(Set_Timekeeper, 100);
 
 function Set_Timekeeper() {
-    Timekeeper.innerHTML = Point;//Video.currentTime.toFixed(1);
+    Timekeeper.innerHTML = Video.currentTime.toFixed(1);
 }
 
 
 // Description
 
-Description.innerHTML = "This is the description of the point in the video."
+//Description.innerHTML = "This is the description of the point in the video."
 
 
 // Time Controls
@@ -124,7 +126,7 @@ function Check_Key(e) {
     // a: Increment Backward
     
     if (e.keyCode == '65') {
-        Target = Target + 0.1
+        Target = Target - 0.1
         //Video.currentTime = Video.currentTime - 0.1
     }
     
