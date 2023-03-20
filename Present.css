@@ -98,7 +98,8 @@ body {
     background-color:var(--Timer_Color); 
     text-align:center;
     border-radius:20px;
-    color:white;
+    color:var(--Sidebar_Color); 
+
 }
 
 
@@ -109,4 +110,8 @@ video {
     -moz-border-radius:20px;
     -webkit-border-radius:20px;
     border-radius:20px;
+}
+
+video:-webkit-full-screen {
+  cursor: crosshair;
 }
