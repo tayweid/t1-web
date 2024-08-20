@@ -9,20 +9,37 @@
 body {
     font-family: "Roboto", sans-serif;
 }
+
 .Header {
-    margin:-3%;
-    text-align: center; 
-    font-size:56px; 
+    margin-top:-10px;
+    margin-bottom:-30px;
+    display: flex;
+    font-size: 40px;
 }
-.Title {
-    color:var(--Sidebar_Color); 
-    text-align: center;
+  
+.left {
+    flex: 50%;
+}
+.rigth {
+    flex: 50%;
 }
 
+.Title {
+    color:var(--Sidebar_Color); 
+    text-align: left;
+}
+.Timekeeper {
+    text-align:right;
+    color:var(--Sidebar_Color); 
+    opacity: 0.2;
+}
 .OuterContent {
-    padding-left:15%;
-    padding-right:15%;
+    padding-left:5%;
+    padding-right:5%;
     overflow: hidden;
+}
+.Inner {
+    display: flex;
 }
 .Content {
     border-radius:20px;
@@ -30,76 +47,15 @@ body {
     overflow: hidden;
     background-color:var(--Description_Color); 
 }
-.Content:hover {
-    box-shadow: 0.5px 1px 2px 0.5px var(--Sidebar_Color);
-    transition: 0.2s;
-}
 .Content > hr {
     margin-top:0px; 
 }
-.Body_Container {
-    display: flex;
-    overflow: hidden;
-}
 .Video_Container {
-    width:94%;
+    width:100%;
 }
 .The_Video {
     width:100%;
     border-radius:0px;
-}
-.Control_Group {
-    color:black; 
-    background-color:var(--Button_Color); 
-    font-size:24px;
-    width:4%;
-}
-.Control_Group > div {
-    text-align:center;
-    height:50%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-}
-
-.Play_Forward:hover {
-    background-color: var(--Active_Color);
-    cursor: pointer;
-    transition: 0.2s;
-}
-.Play_Backward:hover {
-    background-color: var(--Active_Color);
-    cursor: pointer;
-    transition: 0.2s;
-}
-.Skip_Forward:hover {
-    background-color: var(--Active_Color);
-    cursor: pointer;
-    transition: 0.2s;
-}
-.Skip_Backward:hover {
-    background-color: var(--Active_Color);
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.Footer_Container {
-    display: flex;
-}
-.Description {
-    width:100%;
-    background-color:var(--Description_Color); 
-    font-size:24px;
-    padding:3%;
-    color:white;
-}
-.Timekeeper {
-    background-color:var(--Timer_Color); 
-    text-align:center;
-    border-radius:20px;
-    color:var(--Sidebar_Color); 
-
 }
 
 

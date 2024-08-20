@@ -2,6 +2,7 @@
 
 var Video = document.getElementById("The_Video"); 
 var Timekeeper = document.getElementById("Timekeeper");
+var Content = document.getElementById("Content")
 var Description = document.getElementById("Description");
 var Point = 0;
 var Target = 0;
@@ -208,9 +209,9 @@ function updateBackgroundColor() {
     );
 
     if (isNearPausePoint) {
-        Timekeeper.style.backgroundColor = 'red';
+        Content.style.borderColor = 'red';
     } else {
-        Timekeeper.style.backgroundColor = ''; // Revert to original background color
+        Content.style.borderColor = ''; // Revert to original background color
     }
 }
 
